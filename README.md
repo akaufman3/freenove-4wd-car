@@ -23,3 +23,5 @@ Experimenting implementing PID controller, Kalman Filter and Localization on a r
      - Make the car track a line.
      - Identify/avoid an obstacle.
      - Send Serial communication back and forth between car and a device/computer.
+  
+  https://youtube.com/shorts/2b_CvHQLJTQ?si=Czg7olRUOdeLG7KM
