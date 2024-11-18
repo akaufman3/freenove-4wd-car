@@ -1,0 +1,143 @@
+#include "Freenove_4WD_Car_for_Arduino.h"
+#include <Servo.h>
+#include "Car_Class.h"
+
+#define PIN_SERVO           2    
+#define TK_STOP_SPEED     0     
+#define TK_FORWARD_SPEED (150)
+
+byte servoOffset = 0;
+byte incomingByte = 0;
+int speedOffset;//batteryVoltageCompensationToSpeed
+car car;
+
+// Commands supplied from Serial monitor to make the car do different things
+#define MODE_STOP 4
+#define MODE_FOLLOW 5
+
+// Keep track of starting and stoping tracking
+
+u8 currMode = MODE_STOP;
+u8 prevMode = currMode;
+bool modeChanged = false;
+
+// instantiate PID values
+float kp = 0.035;
+float kd = 0; //0.02;
+float ki = 0;
+float sum_pid_error = 0;
+float prev_error = 0;
+
+Servo servo2;             //create servo object
+
+void setup() {
+  Serial.begin(9600);
+  servo2.attach(PIN_SERVO);
+  servo2.write(180 + servoOffset);  // change servoOffset to Calibrate servo
+  pinMode(PIN_BUZZER, OUTPUT);
+  pinsSetup(); //set up pins, from Freenove_4WD_Car_for_Arduino.h library 
+}
+
+void loop() {
+  followBox(incomingByte);
+}
+
+
+void followBox(char incomingByte) {
+  if(modeChanged) { // using a flag to reset variables
+    delay(500);
+    kp = 0.035;
+    kd = 0;
+    ki = 0;
+    sum_pid_error = 0;
+  }
+  
+  // car.updateAutomaticObstacleAvoidance();
+  float distance = car.getSonar();
+  Serial.print("distance: ");
+  Serial.println(distance);
+
+  float forwardSpeed = 0;
+  // if obstacle is within a certain distance
+  if(distance > 20) {
+    Serial.println("item is far");
+    car.motorRun(0, 0);
+  } else {
+    // keep within 25 cm of the obstacle...
+    Serial.println("item is close");
+    forwardSpeed = speedController(distance, incomingByte);
+    Serial.print("forwardSpeed: ");
+    Serial.println(forwardSpeed);
+    car.motorRun((forwardSpeed ), (forwardSpeed ));
+    // you can replace the above line with motorRun() from Freenove tutorial
+  }
+
+  delay(50);
+
+}
+
+// This function returns a speed in m/sec. You can instead
+// return a power level from -255 to +255.
+float speedController(float dist_error, char incomingByte) {
+  //Serial.print("dist_error: ");
+  //Serial.println(dist_error);
+  
+  float min_speed = 0; 
+  float max_speed = 160;
+  float output_speed = max_speed;
+  
+  if(prev_error == 0) { // if this is first time
+    prev_error = dist_error;
+  }
+  
+  if(incomingByte == 'p') {
+    kp -= 0.001;
+  } else if(incomingByte == 'P') {
+    kp += 0.001;
+  } else if(incomingByte == 'd') {
+    kd -= 0.0001;
+  } else if(incomingByte == 'D') {
+    kd += 0.0001;
+  } else if(incomingByte == 'i') {
+    ki -= 0.00001; 
+  } else if(incomingByte == 'I') {
+    ki += 0.00001;
+  }
+
+  sum_pid_error += dist_error;
+
+  float alpha = kp * dist_error + kd * (dist_error - prev_error) + ki * sum_pid_error;
+  Serial.print("alpha: ");
+  Serial.println(alpha);
+  
+  prev_error = dist_error;
+
+  
+  if(alpha > 0) {
+    if(alpha > .55) {
+      output_speed = max_speed;
+      alpha = .55;
+    } else if(alpha <= .45) {
+      output_speed = min_speed;
+      alpha = 0;
+    } else if(alpha < .25) {
+      alpha = .25;
+    }
+  } else if(alpha < 0) {
+    alpha = -0.30 + alpha;
+    if(alpha < (-0.30 - .55)) {
+      output_speed = max_speed - 100;
+      alpha = -0.30 - .55;
+    } else if(alpha >= -0.55) {
+      output_speed = 0;
+      alpha = 0;
+    } else if(alpha > (-0.30 - .25)) {
+      output_speed = min_speed + 150;
+      alpha = -0.30 - .25;
+    }
+
+  }
+
+  return output_speed;
+}
+
