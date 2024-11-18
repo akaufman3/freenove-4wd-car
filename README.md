@@ -16,6 +16,11 @@ Experimenting implementing PID controller, Kalman Filter and Localization on a r
 ![alt text](https://github.com/akaufman3/freenove-4wd-car/blob/main/IMG_4143.jpg?raw=true)
 
 2. Load libraries and run pre-built programs to experiment with sensors and actuators.
+    - Practicing having the car move backwards and forwards
+    - [code](https://github.com/akaufman3/freenove-4wd-car/blob/main/move-car-forward-backward)
+    - <a href="https://youtube.com/shorts/d4gTm3qUuXs?si=OyTW5ZBuKPcH_Fp0" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%202.41.01%20PM.png?raw=true" alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
+
+     
      - Load required libraries, as described in the tutorial for the hardware kit.
      - Load some pre-built programs and run on the hardware.
      - Write my own rule-based programs or copy and modify existing ones.
@@ -23,10 +28,12 @@ Experimenting implementing PID controller, Kalman Filter and Localization on a r
      - Make the car track a line.
      - Identify/avoid an obstacle.
      - Send Serial communication back and forth between car and a device/computer.
-
-Working through some of the pre-built progams I experimented with having the car be able to detect and object at a certain distance:
-  - <a href="https://youtube.com/shorts/2b_CvHQLJTQ?si=Czg7olRUOdeLG7KM" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%201.45.33%20PM.png?raw=true" 
+       
+3. Challenge 1: Sense the environment in some way (light, temperature, sound, water level in your plant, etc.) and respond somehow
+    - Working through some of the pre-built progams I experimented with having the car be able to detect and object at a certain distance:
+    - <a href="https://youtube.com/shorts/2b_CvHQLJTQ?si=Czg7olRUOdeLG7KM" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%201.45.33%20PM.png?raw=true" 
 alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
+
 
 I experimented with line tracking. There were some interesting lessons around the interferance of the color of flooring and the distinction between the black tape line and the floor. This can be seen in the below video:
   - <a href="https://youtube.com/shorts/kJCh03ERKyo?si=2h8C8oGevs1FqMWV" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%202.00.07%20PM.png?raw=true" 
