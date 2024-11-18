@@ -23,5 +23,6 @@ Experimenting implementing PID controller, Kalman Filter and Localization on a r
      - Make the car track a line.
      - Identify/avoid an obstacle.
      - Send Serial communication back and forth between car and a device/computer.
-  
-  https://youtube.com/shorts/2b_CvHQLJTQ?si=Czg7olRUOdeLG7KM
+
+<a href="https://youtube.com/shorts/2b_CvHQLJTQ?si=Czg7olRUOdeLG7KM" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%201.45.33%20PM.png?raw=true" 
+alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
