@@ -24,5 +24,12 @@ Experimenting implementing PID controller, Kalman Filter and Localization on a r
      - Identify/avoid an obstacle.
      - Send Serial communication back and forth between car and a device/computer.
 
-<a href="https://youtube.com/shorts/2b_CvHQLJTQ?si=Czg7olRUOdeLG7KM" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%201.45.33%20PM.png?raw=true" 
+Working through some of the pre-built progams I experimented with having the car be able to detect and object at a certain distance:
+  - <a href="https://youtube.com/shorts/2b_CvHQLJTQ?si=Czg7olRUOdeLG7KM" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%201.45.33%20PM.png?raw=true" 
 alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
+
+I experimented with line tracking. There were some interesting lessons around the interferance of the color of floring and the distinction between the black tape line and the floor. This can be seen in the below video:
+  - <a href="https://youtube.com/shorts/kJCh03ERKyo?si=2h8C8oGevs1FqMWV" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%202.00.07%20PM.png?raw=true" 
+alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
+
+
