@@ -1,0 +1,63 @@
+#ifndef Car_Class_h
+#define Car_Class_h
+#include "Arduino.h" 
+
+#define PIN_BATTERY     A0
+#define PIN_BUZZER      A0
+#define PIN_SONIC_TRIG      7
+#define PIN_SONIC_ECHO      8
+#define SONIC_TIMEOUT   (MAX_DISTANCE*60)
+#define MAX_DISTANCE    1000   
+#define SOUND_VELOCITY    340   //soundVelocity: 340m/s
+#define OBSTACLE_DISTANCE   10
+#define OBSTACLE_DISTANCE_LOW 45
+
+Servo servo;
+float distance = 0;
+
+
+class car {
+  public:
+    float getSonar() {
+      unsigned long pingTime;
+      float distance;
+      digitalWrite(PIN_SONIC_TRIG, HIGH); // make trigPin output high level lasting for 10μs to triger HC_SR04,
+      delayMicroseconds(10);
+      digitalWrite(PIN_SONIC_TRIG, LOW);
+      pingTime = pulseIn(PIN_SONIC_ECHO, HIGH, SONIC_TIMEOUT); // Wait HC-SR04 returning to the high level and measure out this waitting time
+      if (pingTime != 0)
+        distance = (float)pingTime * SOUND_VELOCITY / 2 / 10000; // calculate the distance according to the time
+      else
+        distance = MAX_DISTANCE;
+
+      if (distance < 60) {        //Too little distance ahead
+        digitalWrite(PIN_BUZZER, HIGH);
+        delay(100);
+        digitalWrite(PIN_BUZZER, LOW);
+      }
+      return distance; // return the distance value
+    }
+
+    void motorRun(int speedl, int speedr) {
+      int dirL = 0, dirR = 0;
+      if (speedl > 0) {
+        dirL = 0 ^ MOTOR_DIRECTION;
+      } else {
+        dirL = 1 ^ MOTOR_DIRECTION;
+        speedl = -speedl;
+      }
+
+      if (speedr > 0) {
+        dirR = 1 ^ MOTOR_DIRECTION;
+      } else {
+        dirR = 0 ^ MOTOR_DIRECTION;
+        speedr = -speedr;
+      }
+
+      digitalWrite(PIN_DIRECTION_LEFT, dirL);
+      digitalWrite(PIN_DIRECTION_RIGHT, dirR);
+      analogWrite(PIN_MOTOR_PWM_LEFT, speedl);
+      analogWrite(PIN_MOTOR_PWM_RIGHT, speedr);
+    }
+};
+#endif
