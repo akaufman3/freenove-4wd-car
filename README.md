@@ -28,7 +28,8 @@ alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
 4. Challenge 2: Affect the environment in some way of your choice (move an object, make a robot drive or fly in a controlled way, turn an appliance on/off, etc…)
 Note: The environment must be affected by a type of actuator that can be controlled by software.
    - Adapted boiler plate code to allow the car to detect objects at varying distances and adjust direction or rotate 180deg to attempt to move around the object
-   - [code]
+   - [code](https://github.com/akaufman3/freenove-4wd-car/blob/main/detect-and-rotate)
+   - <a href="https://youtube.com/shorts/Qj_mQ-wwjQY?si=MxwAiCIdN4ToMBLe" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%203.29.21%20PM.png?raw=true" alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
 
 
 I experimented with line tracking. There were some interesting lessons around the interferance of the color of flooring and the distinction between the black tape line and the floor. This can be seen in the below video:
