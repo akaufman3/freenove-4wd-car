@@ -47,7 +47,7 @@ alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
 
 Eventually I was successful in getting the car to track a loop albeit with some jittering reamining. This can be seen below:
 
-<a href="https://www.youtube.com/watch?v=kP5tqfmZ3q4" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%204.05.52%20PM.png?raw=true" 
+- <a href="https://www.youtube.com/watch?v=kP5tqfmZ3q4" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%204.05.52%20PM.png?raw=true" 
 alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
 
 There were additionally some interesting lessons around the following:
