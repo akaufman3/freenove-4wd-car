@@ -32,13 +32,14 @@ Note: The environment must be affected by a type of actuator that can be control
    - <a href="https://youtube.com/shorts/Qj_mQ-wwjQY?si=MxwAiCIdN4ToMBLe" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%203.29.21%20PM.png?raw=true" alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
 
 5. Challenge 3 - AI – PID Controller
-
-Implement a PID controller to keep the car at a certain target distance from an object, e.g., your hand. The car should speed up or slow down depending on the distance from the object.
-
-I managed to get at least the forward movement working for PID implementation. It was pretty hard but a nice challenge. Getting the alpha error to correlate with a speed and tuning that so the car stopped nicely, accelerated smoothly is tricky. I would have liked to spend more time getting it to drive in reverse. I had to take the 5/4 stop/start out because my code wouldnt loop.
-  - [code](https://github.com/akaufman3/freenove-4wd-car/blob/main/pid-controller)
-  - [code](https://github.com/akaufman3/freenove-4wd-car/blob/main/car-class)
-  - <a href="https://youtube.com/shorts/pEK_mu42l4E?si=EtS3flFuS7bZu5Yq" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%203.54.24%20PM.png?raw=true" alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
+    - Implement a PID controller to keep the car at a certain target distance from an object, e.g., your hand. The car should speed up or slow down depending on the distance from the object.
+    - I managed to get at least the forward movement working for PID implementation. It was pretty hard but a nice challenge. Getting the alpha error to correlate with a speed and tuning that so the car stopped nicely, accelerated smoothly is tricky. I would have liked to spend more time getting it to drive in reverse. I had to take the 5/4 stop/start out because my code wouldnt loop. At first I just tested for obstacle being too close to the car (car stopped) and far (car could drive forward).
+      - [code](https://github.com/akaufman3/freenove-4wd-car/blob/main/pid-controller)
+      - [code](https://github.com/akaufman3/freenove-4wd-car/blob/main/car-class)
+      - <a href="https://youtube.com/shorts/pEK_mu42l4E?si=EtS3flFuS7bZu5Yq" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%203.54.24%20PM.png?raw=true" alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
+    - Then I tried to do an out of range stop. So for this video you can see the car drives forward when the obstacle is within a certain threshold but stops if the obstacle is close or really far out of range.
+      - ![alt text](https://youtube.com/shorts/q08wobXeXOo?feature=share)
+      - <a href="https://www.youtube.com/shorts/q08wobXeXOo" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screen%20Shot%202023-05-01%20at%203.50.29%20AM.png?raw=true" alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
 
 6. I also experimented with line tracking. There were some interesting lessons around the interferance of the color of flooring and the distinction between the black tape line and the floor. This can be seen in the below video:
   - <a href="https://youtube.com/shorts/kJCh03ERKyo?si=2h8C8oGevs1FqMWV" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%202.00.07%20PM.png?raw=true" 
