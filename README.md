@@ -38,8 +38,8 @@ Note: The environment must be affected by a type of actuator that can be control
       - [code](https://github.com/akaufman3/freenove-4wd-car/blob/main/car-class)
       - <a href="https://youtube.com/shorts/pEK_mu42l4E?si=EtS3flFuS7bZu5Yq" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%203.54.24%20PM.png?raw=true" alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
     - Then I tried to do an out of range stop. So for this video you can see the car drives forward when the obstacle is within a certain threshold but stops if the obstacle is close or really far out of range.
-      - ![alt text](https://youtube.com/shorts/q08wobXeXOo?feature=share)
-      - <a href="https://www.youtube.com/shorts/q08wobXeXOo" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screen%20Shot%202023-05-01%20at%203.50.29%20AM.png?raw=true" alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
+      - ![alt text](https://github.com/akaufman3/freenove-4wd-car/blob/main/Screen%20Shot%202023-05-01%20at%203.50.29%20AM.png?raw=true)
+      - <a href="https://www.youtube.com/shorts/q08wobXeXOo" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%204.02.15%20PM.png?raw=true" alt="IMAGE ALT TEXT HERE" width="250" height="400" border="10" /></a>
 
 6. I also experimented with line tracking. There were some interesting lessons around the interferance of the color of flooring and the distinction between the black tape line and the floor. This can be seen in the below video:
   - <a href="https://youtube.com/shorts/kJCh03ERKyo?si=2h8C8oGevs1FqMWV" target="_blank"><img src="https://github.com/akaufman3/freenove-4wd-car/blob/main/Screenshot%202024-11-18%20at%202.00.07%20PM.png?raw=true" 
